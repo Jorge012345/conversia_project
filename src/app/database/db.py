@@ -4,7 +4,6 @@ from settings import Settings
 
 class Database:
     DATABASE_URL = Settings.DATABASE_URL
-    # DATABASE_URL = "postgresql+psycopg://postgres:admin@localhost/conversia"
     
     engine = create_async_engine(DATABASE_URL, echo=True)
     SessionLocal = async_sessionmaker(bind=engine, expire_on_commit=False, class_=AsyncSession)
